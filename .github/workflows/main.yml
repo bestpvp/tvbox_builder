@@ -52,8 +52,9 @@ jobs:
       - name: Print upStream variable
         run: |
           echo "upStream=$upStream"
-          echo "env=${{ env }} | env.commit=${{ env.commit }} | env.tag=${{ env.tag }}"
           echo "commit=$commit"
           echo "commitS=$commitS"
           echo "GITHUB_ENV=$GITHUB_ENV"
+      - name: Print env
+        run: env
 
