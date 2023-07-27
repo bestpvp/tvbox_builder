@@ -105,10 +105,6 @@ jobs:
           name: ${{ matrix.userName }}-${{ matrix.repoName }}-${{ env.tag }}
           path: |
             TVBoxOSC/apk/*
-      - name: Whether Or Not to Publish
-        if: ${{ env.commit }}
-        run: |
-          echo "commit=" >> $GITHUB_ENV
       - name: Release and Upload Assets
         uses: ncipollo/release-action@v1
         if: ${{ env.commit }}
