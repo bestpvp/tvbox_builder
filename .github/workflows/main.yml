@@ -2,11 +2,6 @@ name: build
 
 on:
   workflow_dispatch:
-    inputs:
-      rebuild:
-        description: '忽略构建记录以重新构建'
-        required: false
-        type: boolean
 
 jobs:
   build:
@@ -31,7 +26,7 @@ jobs:
           upStream=https://github.com/${{ matrix.userName }}/${{ matrix.repoName }}
           echo "upStream=$upStream" >> $GITHUB_ENV
           commit=$(curl -sL $upStream/commits/${{ matrix.branchName }} |grep -o "/${{ matrix.userName }}/${{ matrix.repoName }}/commit/[a-z0-9]\+" |head -1 | cut -d\/ -f5)          
-          if ! grep -q "$commit" README.md || [ "${{ inputs.rebuild }}" == "true" ]; then
+          if ! grep -q "$commit" README.md; then
             echo "commit=$commit" >> $GITHUB_ENV
             echo "commitS=${commit:0:7}" >> $GITHUB_ENV
           fi
