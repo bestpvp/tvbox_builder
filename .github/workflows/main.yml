@@ -35,9 +35,25 @@ jobs:
             echo "commit=$commit" >> $GITHUB_ENV
             echo "commitS=${commit:0:7}" >> $GITHUB_ENV
           fi
+      - name: Checkout Source Code
+        if: ${{ env.commit }}
+        run: |
+          git clone ${{ env.upStream }} TVBoxOSC
+          cd TVBoxOSC
+          git checkout ${{ env.commit }}
+          echo "tag=$(git log --date=format:'%Y%m%d-%H%M' --pretty=format:%cd ${{ env.commitS }} -1)" >> $GITHUB_ENV
+      - name: Extra Modify
+        if: ${{ env.commit }}
+        working-directory: TVBoxOSC
+        run: |
+          echo '修改VersionName'
+          sed -i "/versionName/s#[0-9a-zA-Z_\.\'\"-]\+\$#\'${{ env.tag }}\'#" app/build.gradle
+          sed -i "/android:text=/s#=\"#=\"${{ env.tag }}\\\\n\\\\n#" app/src/main/res/layout/dialog_about.xml
       - name: Print upStream variable
         run: |
           echo "upStream=$upStream"
-          echo "$commit"
+          echo "env=$env | env.commit=$env.commit | env.tag=$env.tag"
+          echo "commit=$commit"
+          echo "commitS=$commitS"
           echo "GITHUB_ENV=$GITHUB_ENV"
 
