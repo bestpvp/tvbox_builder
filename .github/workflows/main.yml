@@ -35,6 +35,13 @@ jobs:
             echo "commit=$commit" >> $GITHUB_ENV
             echo "commitS=${commit:0:7}" >> $GITHUB_ENV
           fi
+      - name: Check Commit status
+        if: ${{ env.commit }}
+        run: |
+          # 通过使用 matrix 变量引用对应的值
+          echo "userName: ${{ matrix.userName }}"
+          echo "repoName: ${{ matrix.repoName }}"
+          echo "branchName: ${{ matrix.branchName }}"
       - name: Checkout Source Code
         if: ${{ env.commit }}
         run: |
