@@ -123,7 +123,7 @@ jobs:
       - name: Debug GitHub Token
         run: |
           echo "The GitHub Token is: ${{ secrets.GITHUB_TOKEN }}"
-      - name: Push to master
+      - name: Commit
         if: ${{ env.commit }}
         run: |
           rm -rf TVBoxOSC
@@ -131,6 +131,9 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           sed -i "/${{ matrix.userName }}\/${{ matrix.repoName }}/s#Updated: [a-zA-Z0-9]*#Updated: ${{ env.commit }}#" README.md
-          git add --all
+          git add .
           git commit -m "${{ env.commit }}"
-          git push -u -f origin master
+      - name: Push to master
+        # You may pin to the exact commit or the version.
+        # uses: tcitry/push-to-master@17c179699110423dcc7db2d9ddfe3481cf0da596
+        uses: tcitry/push-to-master@v1.0
