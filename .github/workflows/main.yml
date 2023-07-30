@@ -120,6 +120,9 @@ jobs:
           artifacts: |
             TVBoxOSC/apk/*.apk
             TVBoxOSC/source-${{ env.commitS }}.*
+      - name: Debug GitHub Token
+        run: |
+          echo "The GitHub Token is: ${{ secrets.GITHUB_TOKEN }}"
       - name: Push to master
         if: ${{ env.commit }}
         run: |
