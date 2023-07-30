@@ -137,5 +137,6 @@ jobs:
           git commit -m "${{ env.commit }}"
       - name: Push to master
         uses: ad-m/github-push-action@master
+        if: ${{ env.commit }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
