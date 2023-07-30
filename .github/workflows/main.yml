@@ -131,8 +131,8 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           sed -i "/${{ matrix.userName }}\/${{ matrix.repoName }}/s#Updated: [a-zA-Z0-9]*#Updated: ${{ env.commit }}#" README.md
           git add .
-          git commit -m "${{ env.commit }}"
+          git commit -m "${{ env.commit }}" -a
       - name: Push to master
-        # You may pin to the exact commit or the version.
-        # uses: tcitry/push-to-master@17c179699110423dcc7db2d9ddfe3481cf0da596
-        uses: tcitry/push-to-master@v1.0
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
