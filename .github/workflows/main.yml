@@ -130,7 +130,6 @@ jobs:
           sed -i '/url =/d' ./.git/config
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase
           sed -i "/${{ matrix.userName }}\/${{ matrix.repoName }}/s#Updated: [a-zA-Z0-9]*#Updated: ${{ env.commit }}#" README.md
           git add --all
           git commit -m "${{ env.commit }}"
