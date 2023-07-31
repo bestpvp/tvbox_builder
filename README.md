@@ -4,8 +4,7 @@
 [![Total](https://shields.io/github/downloads/bestpvp/tvbox_builder/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/bestpvp/tvbox_builder/releases)
 
 ## 关注码上放生微信公众号
-![alt 码上放生](./join.png)
-
+![码上放生](./join.PNG)
 
 ## Credits
 This repo relies on the following third-party projects:
