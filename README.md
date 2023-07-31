@@ -1,9 +1,10 @@
 # tvbox_builder
-时光机打包 actions
-
 ![Build](https://shields.io/github/actions/workflow/status/bestpvp/tvbox_builder/test.yml?branch=master&logo=github&label=Build)
 [![Download](https://img.shields.io/github/v/release/bestpvp/tvbox_builder?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/bestpvp/tvbox_builder/releases/latest) 
 [![Total](https://shields.io/github/downloads/bestpvp/tvbox_builder/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/bestpvp/tvbox_builder/releases)
+
+## 关注码上放生微信公众号
+![alt 码上放生](./join.png)
 
 
 ## Credits
