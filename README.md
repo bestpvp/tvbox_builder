@@ -7,5 +7,5 @@
 
 ## Credits
 This repo relies on the following third-party projects:
-- [bestpvp/TVBoxOS_white](https://github.com/bestpvp/TVBoxOS_white) (Updated: d90f32a2a799dc598748a5dce400af4789fef0a6)
+- [bestpvp/TVBoxOS_white](https://github.com/bestpvp/TVBoxOS_white) (Updated: cde9c6655907e12b278148509d1577702838e258)
 - [bestpvp/Box_black](https://github.com/bestpvp/Box_black) (Updated: 50321638aa63447557b019de37b21012e2320f7b)
