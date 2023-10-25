@@ -11,10 +11,10 @@ jobs:
       matrix:
         include:
           - userName: bestpvp
-            repoName: TVBoxOS_white
+            repoName: box_fengchu
             branchName: main
           - userName: bestpvp
-            repoName: Box_black
+            repoName: box_wolong
             branchName: main
     steps:
       - name: Checkout
