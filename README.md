@@ -7,5 +7,5 @@
 
 ## Credits
 This repo relies on the following third-party projects:
-- [卧龙](https://github.com/bestpvp/box_wolong) (Updated: e340cb48b30fd2b43ca086882163498af0e18383)
+- [卧龙](https://github.com/bestpvp/box_wolong) (Updated: 7c227df9c15e1c4a2649f5ec6c062ea273833768)
 - [凤雏](https://github.com/bestpvp/box_fengchu) (Updated: 99b4e72a4482d15cea4f651995313117b6e1fe40)
