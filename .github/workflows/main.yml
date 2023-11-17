@@ -80,6 +80,8 @@ jobs:
           chmod +x gradlew
           ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
       - name: Run ProGuard
+        if: ${{ env.commit }}
+        working-directory: TVBoxOSC
         run: |
           ./gradlew minifyRelease
       - name: Prepare App
